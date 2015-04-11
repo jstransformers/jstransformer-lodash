@@ -1,6 +1,6 @@
 {
   "name": "jstransformer-lodash",
-  "version": "0.4.1",
+  "version": "0.0.0",
   "description": "Lodash support for JS Transformers",
   "scripts": {
     "lint": "jshint index.js && jscs index.js --reporter inline",
