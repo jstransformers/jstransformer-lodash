@@ -11,8 +11,6 @@ var test = require('assertit');
 var transformer = require('jstransformer');
 var transform = transformer(require('../index'));
 
-var lodash = require('lodash');
-
 var opts = {
   place: 'world',
   name: 'charlike mike reagent',
