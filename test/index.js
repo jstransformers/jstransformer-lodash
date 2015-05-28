@@ -1,34 +1,56 @@
-/**
- * jstransformer-toffee <https://github.com/jstransformers/jstransformer-toffee>
- *
- * Copyright (c) 2015 Charlike Mike Reagent, contributors.
- * Released under the MIT license.
- */
-
 'use strict';
 
-var test = require('assertit');
-var transformer = require('jstransformer');
-var transform = transformer(require('../index'));
+var assert = require('assert');
+var fs = require('fs');
+var join = require('path').join;
+var test = require('testit');
 
-var opts = {
-  place: 'world',
-  name: 'charlike mike reagent',
-  imports: {
-    sentencecase: function sentencecase(str) {
-      if (str.length === 1) {return str.toUpperCase(); }
-      return str.charAt(0).toUpperCase() + str.slice(1);
-    }
-  },
-  mixins: {
-    charlikecase: function charlikeCase(str) {
-      return str.toUpperCase();
-    }
-  }
-};
-var template = 'Hello <%= place %>! <%= sentencecase(name) %>, u r my <%= _.charlikecase("master") %>!! at <%= date %>';
-var compile = transform.compile(template, opts);
-var locals = {date: new Date()};
+var transform = require('../');
 
-// console.log(compile.fn(locals))
-// console.log(transform.render(template, opts, locals).body)
+var inputFile = join(__dirname, 'input.txt');
+var input = fs.readFileSync(inputFile).toString();
+var options = require('./options');
+var locals = require('./locals');
+var expected = fs.readFileSync(join(__dirname, 'expected.txt')).toString().trim();
+
+function assertEqual(output, expected) {
+  console.log('   Output:\t'   + JSON.stringify(output));
+  console.log('   Expected:\t' + JSON.stringify(expected));
+  assert.equal(output.trim(), expected);
+}
+
+if (transform.render) {
+  test(transform.name + '.render()', function () {
+    var output = transform.render(input, options, locals);
+    assertEqual(output, expected);
+  });
+}
+
+if (transform.compile) {
+  test(transform.name + '.compile()', function () {
+    var output = transform.compile(input, options)(locals);
+    assertEqual(output, expected);
+  });
+}
+
+if (transform.renderAsync) {
+  test(transform.name + '.renderAsync()', function (done) {
+    transform.renderAsync(input, options, locals).then(function (output) {
+      assertEqual(output, expected);
+      done();
+    }, function (err) {
+      done(err);
+    }).done();
+  });
+}
+
+if (transform.renderFileAsync) {
+  test(transform.name + '.renderFileAsync()', function (done) {
+    transform.renderFileAsync(inputFile, options, locals).then(function (output) {
+      assertEqual(output, expected);
+      done();
+    }, function (err) {
+      done(err);
+    }).done();
+  });
+}

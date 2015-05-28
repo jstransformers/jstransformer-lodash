@@ -1,4 +1,5 @@
+# Changelog
 
+## v0.0.1: 2015-xx-xx
 
-## v0.0.0 / April 11, 2015
-- first commits
+- Initial release
