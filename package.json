@@ -30,7 +30,10 @@
     "url": "https://github.com/jstransformers/jstransformer-lodash/blob/master/LICENSE.md"
   },
   "dependencies": {
-    "lodash": "^3.6.0"
+    "lodash.assign": "^3.2.0",
+    "lodash.template": "^3.6.0",
+    "lodash.omit": "^3.1.0",
+    "lodash.mixin": "^3.0.3"
   },
   "devDependencies": {
     "assertit": "^0.1.0",

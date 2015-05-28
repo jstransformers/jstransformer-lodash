@@ -9,7 +9,12 @@
 
 var fs = require('fs');
 var path = require('path');
-var lodash = require('lodash');
+var lodash = {
+  template: require('lodash.template'),
+  mixin: require('lodash.mixin'),
+  assign: require('lodash.assign'),
+  omit: require('lodash.omit')
+};
 
 exports.name = 'lodash';
 exports.inputFormats = ['lodash', 'html'];
