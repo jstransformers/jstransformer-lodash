@@ -30,7 +30,3 @@ exports.compile = function _compile(str, options) {
     return compile(context);
   };
 };
-exports.render = function _render(str, options, locals) {
-  var compile = exports.compile(str, options);
-  return compile(locals);
-};
