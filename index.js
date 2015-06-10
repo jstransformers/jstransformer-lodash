@@ -1,14 +1,5 @@
-/**
- * jstransformer-toffee <https://github.com/jstransformers/jstransformer-toffee>
- *
- * Copyright (c) 2015 Charlike Mike Reagent, contributors.
- * Released under the MIT license.
- */
-
 'use strict';
 
-var fs = require('fs');
-var path = require('path');
 var lodash = {
   template: require('lodash.template'),
   mixin: require('lodash.mixin'),
