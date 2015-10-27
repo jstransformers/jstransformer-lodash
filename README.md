@@ -20,7 +20,6 @@ var opts = {};
 lodash.render('<h1>Hello <%= place %>!</h1>', opts, {place: 'world'}).body;
 //=> '<h1>Hello world!</h1>'
 
-
 var promise = lodash.renderFileAsync('./path/to/hello.lodash', {}, {place: 'world'});
 promise.then(function(data) {
   console.log(data.body);
