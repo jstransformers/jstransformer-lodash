@@ -1,6 +1,6 @@
 {
   "name": "jstransformer-lodash",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Lodash support for JSTransformers.",
   "keywords": [
     "jstransformer",
@@ -10,10 +10,10 @@
     "index.js"
   ],
   "dependencies": {
-    "lodash.assign": "^3.2.0",
-    "lodash.template": "^3.6.0",
-    "lodash.omit": "^3.1.0",
-    "lodash.mixin": "^3.0.3"
+    "lodash.assign": "^4.0.0",
+    "lodash.template": "^4.0.0",
+    "lodash.omit": "^4.0.1",
+    "lodash.mixin": "^4.0.0"
   },
   "devDependencies": {
     "test-jstransformer": "^1.0.0"
