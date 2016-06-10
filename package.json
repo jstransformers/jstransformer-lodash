@@ -1,6 +1,6 @@
 {
   "name": "jstransformer-lodash",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Lodash support for JSTransformers.",
   "keywords": [
     "jstransformer",
