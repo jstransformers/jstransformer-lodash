@@ -3,7 +3,7 @@
 [Lodash Template](https://lodash.com/docs#template) support for [JSTransformers](http://github.com/jstransformers).
 
 [![Build Status](https://img.shields.io/travis/jstransformers/jstransformer-lodash/master.svg)](https://travis-ci.org/jstransformers/jstransformer-lodash)
-[![Coverage Status](https://img.shields.io/coveralls/jstransformers/jstransformer-lodash/master.svg)](https://coveralls.io/r/jstransformers/jstransformer-lodash?branch=master)
+[![Coverage Status](https://img.shields.io/codecov/c/github/jstransformers/jstransformer-lodash/master.svg)](https://codecov.io/gh/jstransformers/jstransformer-lodash)
 [![Dependency Status](https://img.shields.io/david/jstransformers/jstransformer-lodash/master.svg)](http://david-dm.org/jstransformers/jstransformer-lodash)
 [![NPM version](https://img.shields.io/npm/v/jstransformer-lodash.svg)](https://www.npmjs.org/package/jstransformer-lodash)
 
