@@ -12,6 +12,7 @@ exports.inputFormats = ['lodash', 'html']
 exports.outputFormat = 'html'
 
 exports.compile = function (str, options) {
+  options = options || {}
   if (options.mixins) {
     Object.keys(options.mixins).forEach(function (key) {
       var value = options.mixins[key]
