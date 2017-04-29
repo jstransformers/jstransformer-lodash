@@ -1,5 +1,7 @@
 # jstransformer-lodash
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jstransformers/jstransformer-lodash.svg)](https://greenkeeper.io/)
+
 [Lodash Template](https://lodash.com/docs#template) support for [JSTransformers](http://github.com/jstransformers).
 
 [![Build Status](https://img.shields.io/travis/jstransformers/jstransformer-lodash/master.svg)](https://travis-ci.org/jstransformers/jstransformer-lodash)
