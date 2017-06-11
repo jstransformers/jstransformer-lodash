@@ -1,6 +1,6 @@
 'use strict'
 
-var lodash = {
+const lodash = {
   template: require('lodash.template'),
   mixin: require('lodash.mixin'),
   assign: require('lodash.assign'),
@@ -14,19 +14,19 @@ exports.outputFormat = 'html'
 exports.compile = function (str, options) {
   options = options || {}
   if (options.mixins) {
-    Object.keys(options.mixins).forEach(function (key) {
-      var value = options.mixins[key]
-      var mixin = {}
+    Object.keys(options.mixins).forEach(key => {
+      const value = options.mixins[key]
+      const mixin = {}
       mixin[key] = value
 
       lodash.mixin(mixin)
     })
   }
   options = lodash.omit(options, ['mixins'])
-  var compile = lodash.template(str, options)
-  var context = lodash.omit(options, ['imports'])
+  const compile = lodash.template(str, options)
+  let context = lodash.omit(options, ['imports'])
 
-  return function (locals) {
+  return locals => {
     context = lodash.assign(context, locals)
     return compile(context)
   }
