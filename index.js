@@ -22,6 +22,7 @@ exports.compile = function (str, options) {
       lodash.mixin(mixin)
     })
   }
+
   options = lodash.omit(options, ['mixins'])
   const compile = lodash.template(str, options)
   let context = lodash.omit(options, ['imports'])
